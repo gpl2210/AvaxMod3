@@ -1,35 +1,51 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+# PhantomGopal (PGT) Smart Contract
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+## Overview
 
-     * ## Overview
-     * PhantomGopal (PGT) is an ERC-20 token designed for various use cases, featuring a total supply of 10 million tokens. This contract is based on the OpenZeppelin library, utilizing the ERC-20 and Ownable modules.
-     
-     * ### Features
-     * - **Mintable:** Allows the owner to mint additional tokens as needed.
-     * - **Burnable:** Provides functionality to burn (destroy) tokens, reducing the total supply.
-     * - **Ownable:** Grants exclusive ownership rights to the designated initial owner.
-     
-     * ## Token Details
-     * - **Name:** phantomGopal
-     * - **Symbol:** PGT
-     * - **Decimals:** 18 (for better precision)
-     
-     * ## Initial Distribution
-     * Upon deployment, the smart contract will mint and allocate 10 million PGT tokens to the initial owner.
-     *
-     * ## Functions
-     
-     * ### Minting
-     * The owner has the ability to mint new tokens. This feature is useful for expanding the token supply as needed.
-     * ```solidity
-     * function mint(address to, uint256 amount) external onlyOwner {
-     *     _mint(to, amount);
-     * }
-     * ```
-     
-     * ### Burning
-     * Token holders can burn their own tokens, effectively reducing the total supply. This is achieved using the standard ERC-20 `burn` function from the OpenZeppelin library.
+PhantomGopal is an ERC-20 token smart contract written in Solidity. It inherits from the OpenZeppelin ERC20 and ERC20Burnable contracts, providing standard ERC-20 functionality along with the ability to burn tokens. Additionally, it inherits from the Ownable contract to restrict certain functions to the contract owner.
+
+## License
+
+This contract is licensed under the MIT License. See the LICENSE file for details.
+
+## Smart Contract Details
+
+### Token Information
+
+- **Name:** PhantomGopal
+- **Symbol:** PGT
+- **Decimals:** [Specify the number of decimals]
+
+### Features
+
+#### Token Minting:
+
+- The initial supply of PhantomGopal is minted to the contract creator's address during deployment.
+- The contract owner can mint additional tokens using the `mint` function.
+
+#### Token Burning:
+
+- PhantomGopal supports token burning functionality inherited from ERC20Burnable.
+
+#### Ownership:
+
+- The contract includes the Ownable modifier, ensuring that certain functions can only be executed by the owner.
+
+## Functions
+
+### `mint(address to, uint256 amount) external onlyOwner`
+
+Mints additional tokens to the specified address. This function can only be executed by the contract owner.
+
+## Smart Contract Deployment
+
+To deploy the PhantomGopal smart contract, provide the following parameters:
+
+- `initialOwner`: The initial owner of the contract.
+
+
+## License
+
+This smart contract is released under the MIT License. See the LICENSE file for more details.
+
+
